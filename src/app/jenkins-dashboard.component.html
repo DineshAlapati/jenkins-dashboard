@@ -1,0 +1,17 @@
+<div style="text-align:center">
+    <h1>{{title}}</h1>
+</div>
+
+<mat-card *ngFor="let job of jobs">
+    <mat-card-content>
+        <mat-card-title><h3>{{job.name}}</h3></mat-card-title>
+        <mat-card-subtitle>{{job.url}}</mat-card-subtitle>
+        <a href="{{job.url}}" target="_blank">
+            <button *ngIf="job.color === 'blue'" mat-raised-button color="primary">PASSING</button>
+            <button *ngIf="job.color === 'yellow'" mat-raised-button color="accent">WARNING</button>
+            <button *ngIf="job.color === 'red'" mat-raised-button color="warn">FAILING</button>
+        </a>
+    </mat-card-content>
+</mat-card>
+
+<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>

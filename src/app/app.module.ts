@@ -1,16 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule }    from '@angular/http';
+import { MatCardModule, MatButtonModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { JenkinsDashboardComponent } from './jenkins-dashboard.component';
+import { JenkinsDashboardService } from './jenkins-dashboard.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    JenkinsDashboardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    MatCardModule, 
+    MatButtonModule,
   ],
-  providers: [],
+  providers: [JenkinsDashboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
